@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiva - Digitize Your Business with Smart Services</title>
+    <meta name="description" content="Websites, smart catalogs and AI chatbots ready in a few days. Digital services for small businesses and entrepreneurs.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset y variables CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-green: #A2D729;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-cta {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-cta:hover {
+            background: #1E40AF;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-green);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-blue), #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1E40AF;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 16px;
+            background: var(--gray-50);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .benefit-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            justify-items: center;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-green);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), #3B82F6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .services-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .service-pricing-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-green);
+        }
+
+        .service-pricing-card.featured {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--white) 0%, #F8FAFC 100%);
+        }
+
+        .service-pricing-card.featured:hover {
+            border-color: var(--accent-green);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), #3B82F6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .pricing-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+        }
+
+        .price-initial {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .price-monthly {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .service-features li i {
+            color: var(--accent-green);
+            font-size: 0.875rem;
+        }
+
+        .monthly-fee-clarification {
+            background: var(--gray-50);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 60px 0 40px;
+            text-align: center;
+        }
+
+        .monthly-fee-clarification h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .monthly-fee-clarification p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .clarification-note {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-green);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .clarification-note i {
+            color: var(--accent-green);
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+
+        .clarification-note p {
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        .pricing-cta {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 1.125rem;
+        }
+
+        /* Monthly Fee Explanation Section */
+        .monthly-fee-explanation {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .explanation-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .explanation-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .explanation-intro {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .costs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .cost-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cost-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            flex-shrink: 0;
+        }
+
+        .cost-content h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .cost-content p {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .explanation-note {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .explanation-note p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .explanation-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* AI Image Enhancement Section */
+        .ai-enhancement {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .image-comparison-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-comparison {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            cursor: grab;
+        }
+
+        .image-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .image-before,
+        .image-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-after {
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+        }
+
+        .comparison-slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--white);
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+
+        .slider-handle:active {
+            cursor: grabbing;
+        }
+
+        .slider-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--primary-blue);
+            transform: translateX(-50%);
+        }
+
+        .slider-button {
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .image-labels {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 5;
+        }
+
+        .label-before,
+        .label-after {
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .label-after {
+            background: rgba(30, 58, 138, 0.8);
+        }
+
+        .enhancement-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .testimonial-website-preview {
+            margin-top: 30px;
+        }
+
+        .testimonial-website-preview h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .website-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+        }
+
+        .frame-header {
+            background: var(--gray-100);
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .frame-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .control.red {
+            background: #ff5f57;
+        }
+
+        .control.yellow {
+            background: #ffbd2e;
+        }
+
+        .control.green {
+            background: #28ca42;
+        }
+
+        .frame-url {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .frame-content {
+            height: 300px;
+            position: relative;
+        }
+
+        .frame-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .frame-footer {
+            padding: 15px;
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.875rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue), #1E40AF);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #D1D5DB;
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #D1D5DB;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pricing-cell.header {
+                display: none;
+            }
+
+            .pricing-cell:before {
+                content: attr(data-label) ": ";
+                font-weight: 600;
+                color: var(--text-dark);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-pricing-card {
+                padding: 30px 20px;
+            }
+
+            .pricing-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .monthly-fee-clarification {
+                padding: 30px 20px;
+            }
+
+            .clarification-note {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-wrapper {
+                height: 300px;
+            }
+
+            .enhancement-features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .costs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cost-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cost-icon {
+                margin: 0 auto 15px;
+            }
+
+            .frame-content {
+                height: 250px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* WhatsApp Link Styles */
+        .whatsapp-link {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .whatsapp-link:hover {
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./img/Logo_Tiva_Web_Simple.png" alt="Tiva Logo" loading="eager">
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://wa.me/573012533436?text=Hello, I want information about Tiva's digital services" class="nav-cta whatsapp-link" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Digital Services for Businesses</span>
+                </div>
+                
+                        <h1 class="hero-title">
+                    Digitize your business with Tiva
+                        </h1>
+                
+                        <p class="hero-subtitle">
+                    Websites, smart catalogs and AI chatbots ready in a few days. 
+                    Simple, fast and powerful solutions to grow your business.
+                        </p>
+                        
+                        <div class="hero-cta">
+                    <a href="https://wa.me/573012533436?text=Hello, I want to request a digital service for my business" class="btn-primary whatsapp-link" target="_blank" rel="noopener">
+                                <i class="fas fa-comments"></i>
+                        Request service
+                    </a>
+                    <a href="#pricing" class="btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        View plans and pricing
+                            </a>
+                        </div>
+                    </div>
+                                        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why choose our services?</h2>
+                <p class="section-subtitle">Solutions designed specifically for small businesses and entrepreneurs</p>
+                                        </div>
+                                        
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                                                </div>
+                    <h3 class="benefit-title">No commissions or long-term contracts</h3>
+                    <p class="benefit-description">
+                        Pay only for the service you need. No long-term commitments or hidden sales commissions.
+                    </p>
+                                        </div>
+                                        
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                    <h3 class="benefit-title">WhatsApp, SMS and Telegram integrations</h3>
+                    <p class="benefit-description">
+                        Your customers can buy directly from their favorite messaging applications.
+                    </p>
+                            </div>
+                            
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    <h3 class="benefit-title">AI that improves your products and sells for you</h3>
+                    <p class="benefit-description">
+                        Artificial intelligence optimizes your images, creates attractive descriptions and automates sales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What can we do for you?</h2>
+                <p class="section-subtitle">Complete digital services to modernize your business</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                        </div>
+                    <h3 class="service-title">Professional websites</h3>
+                    <p class="service-description">
+                        Modern, responsive and conversion-optimized websites. Professional design that builds trust with your customers.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    <h3 class="service-title">AI catalogs + shopping cart</h3>
+                    <p class="service-description">
+                        Smart catalogs with automated shopping cart. AI improves your products and facilitates sales.
+                    </p>
+            </div>
+            
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                </div>
+                    <h3 class="service-title">Sales chatbots</h3>
+                    <p class="service-description">
+                        Virtual assistants that serve your customers 24/7, answer questions and process orders automatically.
+                    </p>
+                    </div>
+                    
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="service-title">Reservation system</h3>
+                    <p class="service-description">
+                        Complete platform to manage appointments, reservations and services. Ideal for restaurants, salons and clinics.
+                    </p>
+                    </div>
+                    
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 class="service-title">QR orders for restaurants</h3>
+                    <p class="service-description">
+                        Digital menu system with QR codes. Customers scan, view the menu and place orders from their phone.
+                    </p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Plans and Pricing</h2>
+                <p class="section-subtitle">Turnkey digital services for your business. No hidden commissions, no surprises.</p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="services-pricing-grid">
+                <div class="service-pricing-card featured">
+                    <div class="service-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="service-name">Website + Smart Catalog</h3>
+                    <p class="service-description">Professional website with AI-powered product catalog and automated shopping cart</p>
+                    <div class="pricing-info">
+                        <div class="price-initial">$700 USD</div>
+                        <div class="price-monthly">$15/month (optional)</div>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Professional responsive website</li>
+                        <li><i class="fas fa-check"></i> AI-powered product catalog</li>
+                        <li><i class="fas fa-check"></i> Automated WhatsApp/SMS cart</li>
+                        <li><i class="fas fa-check"></i> Image optimization with AI</li>
+                        <li><i class="fas fa-check"></i> SEO optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-pricing-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-name">Basic Chatbot</h3>
+                    <p class="service-description">24/7 customer service chatbot with basic AI responses</p>
+                    <div class="pricing-info">
+                        <div class="price-initial">$250 USD</div>
+                        <div class="price-monthly">$20/month (AI + support)</div>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 24/7 automated responses</li>
+                        <li><i class="fas fa-check"></i> WhatsApp integration</li>
+                        <li><i class="fas fa-check"></i> Basic AI responses</li>
+                        <li><i class="fas fa-check"></i> Order processing</li>
+                        <li><i class="fas fa-check"></i> Technical support</li>
+                    </ul>
+                </div>
+                
+                <div class="service-pricing-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-name">Advanced AI Chatbot</h3>
+                    <p class="service-description">Advanced chatbot powered by GPT with natural language processing</p>
+                    <div class="pricing-info">
+                        <div class="price-initial">$490 USD</div>
+                        <div class="price-monthly">$40/month (GPT + support)</div>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> GPT-powered responses</li>
+                        <li><i class="fas fa-check"></i> Natural language processing</li>
+                        <li><i class="fas fa-check"></i> Multi-platform integration</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                </div>
+                
+                <div class="service-pricing-card">
+                    <div class="service-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 class="service-name">QR Orders for Restaurants</h3>
+                    <p class="service-description">Digital menu system with QR codes for contactless ordering</p>
+                    <div class="pricing-info">
+                        <div class="price-initial">$350 USD</div>
+                        <div class="price-monthly">$15/month</div>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Digital menu with QR codes</li>
+                        <li><i class="fas fa-check"></i> Contactless ordering</li>
+                        <li><i class="fas fa-check"></i> WhatsApp order delivery</li>
+                        <li><i class="fas fa-check"></i> Real-time menu updates</li>
+                        <li><i class="fas fa-check"></i> Order management system</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Monthly Fee Explanation -->
+            <div class="monthly-fee-clarification">
+                <h3>Monthly Fee Clarification</h3>
+                <p>Some services require a monthly fee because they use artificial intelligence tools, hosting, or external integrations (like Make, n8n, OpenAI). They also include technical support and minor adjustments.</p>
+                <div class="clarification-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>The website service works without monthly fees</strong> if the client manages their content. If you prefer us to do it, it can be activated for $15/month.</p>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="pricing-cta">
+                <a href="https://wa.me/573012533436?text=Hello, I want to request a service now" class="btn-primary btn-large" target="_blank" rel="noopener">
+                    <i class="fas fa-rocket"></i>
+                    Request service now
+                </a>
+                <a href="https://wa.me/573012533436?text=Hello, I want to speak with an advisor about Tiva's services" class="btn-secondary btn-large" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    Speak with an advisor via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Fee Explanation Section -->
+    <section class="monthly-fee-explanation">
+        <div class="container">
+            <div class="explanation-content">
+                <h2>Why do some services have a monthly fee?</h2>
+                <p class="explanation-intro">
+                    For some services like catalogs, QR orders or AI chatbots, we apply a small monthly fee. This covers real costs such as:
+                </p>
+                
+                <div class="costs-grid">
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-server"></i>
+            </div>
+                        <div class="cost-content">
+                            <h4>Hosting and system maintenance</h4>
+                            <p>Keeping your service running 24/7 with optimal performance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-brain"></i>
+                                        </div>
+                        <div class="cost-content">
+                            <h4>AI processing for images and texts</h4>
+                            <p>Automatic image enhancement and intelligent text generation</p>
+                                    </div>
+                            </div>
+                            
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-plug"></i>
+                                </div>
+                        <div class="cost-content">
+                            <h4>External integrations</h4>
+                            <p>Use of Make, n8n or AI APIs (like GPT) for automation</p>
+                                </div>
+                            </div>
+                            
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-tools"></i>
+                                </div>
+                        <div class="cost-content">
+                            <h4>Updates and technical support</h4>
+                            <p>Basic technical support and minor adjustments</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                <div class="explanation-note">
+                    <p>
+                        <strong>No monthly fee is charged</strong> if the service doesn't require it (like the Web One Page), but you can request an optional maintenance plan if you want the Tiva team to manage constant changes or improvements for you.
+                    </p>
+                    <p>
+                        This ensures your system always works without problems and you can focus on growing your business.
+                    </p>
+                            </div>
+                                </div>
+                                </div>
+    </section>
+
+    <!-- AI Image Enhancement Section -->
+    <section class="ai-enhancement">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See how we improve your products with AI</h2>
+                <p class="section-subtitle">Upload your photo and we'll take care of the rest</p>
+            </div>
+            
+            <div class="image-comparison-container">
+                <div class="image-comparison">
+                    <div class="image-wrapper">
+                        <img src="./img/imagen1.jpeg" alt="Original product image" class="image-before" loading="lazy">
+                        <img src="./img/imagen2.png" alt="AI enhanced product image" class="image-after" loading="lazy">
+                        <div class="comparison-slider">
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button">
+                                    <i class="fas fa-grip-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-labels">
+                            <div class="label-before">Before</div>
+                            <div class="label-after">After AI Enhancement</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="enhancement-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Automatic Enhancement</h4>
+                            <p>AI improves lighting, colors and overall quality</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Color Optimization</h4>
+                            <p>Perfect color balance and saturation adjustment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Detail Enhancement</h4>
+                            <p>Sharpens details and improves texture clarity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What our clients say</h2>
+                <p class="section-subtitle">Businesses that have grown with our services</p>
+                        </div>
+                        
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-quote">
+                        "Tiva helped us completely digitize our English learning platform. We went from 50 to 500+ active students while maintaining educational quality and reducing operational costs. The platform includes user management, grading system and AI assistants."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">IP</div>
+                        <div class="author-info">
+                            <h4>Inglés Plus</h4>
+                            <p>English Learning Platform</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-website-preview">
+                        <h4>See their platform in action:</h4>
+                        <div class="website-frame">
+                            <div class="frame-header">
+                                <div class="frame-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="frame-url">
+                                    <i class="fas fa-lock"></i>
+                                    inglesplus.com
+                                </div>
+                            </div>
+                            <div class="frame-content">
+                                <iframe 
+                                    src="https://www.inglesplus.com/" 
+                                    frameborder="0"
+                                    allowfullscreen
+                                    loading="lazy"
+                                    title="Inglés Plus - English Learning Platform">
+                                </iframe>
+                            </div>
+                            <div class="frame-footer">
+                                <a href="https://www.inglesplus.com/" target="_blank" rel="noopener" class="btn-secondary btn-small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View full platform
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in-up">
+                    <div class="testimonial-quote">
+                        "Tiva transformed our gelatin business completely. Customers can browse our artistic gelatin catalog, add products to cart and send complete orders via WhatsApp or SMS. Sales increased by 40% and our customers love the seamless experience."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Ana María Gelatinas</h4>
+                            <p>Artistic Gelatin Business</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-website-preview">
+                        <h4>See their store in action:</h4>
+                        <div class="website-frame">
+                            <div class="frame-header">
+                                <div class="frame-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="frame-url">
+                                    <i class="fas fa-lock"></i>
+                                    anamariagelatinas.vercel.app
+                                </div>
+                            </div>
+                            <div class="frame-content">
+                                <iframe 
+                                    src="https://anamariagelatinas.vercel.app/" 
+                                    frameborder="0"
+                                    allowfullscreen
+                                    loading="lazy"
+                                    title="Ana María Gelatinas - Artistic Gelatin Store">
+                                </iframe>
+                            </div>
+                            <div class="frame-footer">
+                                <a href="https://anamariagelatinas.vercel.app/" target="_blank" rel="noopener" class="btn-secondary btn-small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View full store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to get started?</h2>
+                <p>
+                    Join hundreds of businesses that are already growing with our digital services. 
+                    Talk to us now and discover how we can help you.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/573012533436?text=Hello, I want to talk to you about digitizing my business" class="btn-white whatsapp-link" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                        Talk to us now via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./img/Logo_Tiva_Web_Simple.png" alt="Tiva Logo" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="logo-fallback" style="display: none; font-size: 24px; font-weight: 700; color: var(--accent-green); margin-bottom: 15px;">TIVA</div>
+                    </div>
+                    <p>Smart digital services to grow your business.</p>
+                    </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Pages</a></li>
+                        <li><a href="#services">AI Catalogs</a></li>
+                        <li><a href="#services">Chatbots</a></li>
+                        <li><a href="#services">QR Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+57 301 253 3436</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>tiva.contactus@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>West Palm Beach, Florida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tiva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.benefit-card, .service-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // WhatsApp link helper
+        function openWhatsApp(message = '') {
+            const phoneNumber = '573012533436';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Image Comparison Slider
+        function initImageComparison() {
+            const imageWrapper = document.querySelector('.image-wrapper');
+            const sliderHandle = document.querySelector('.slider-handle');
+            const imageAfter = document.querySelector('.image-after');
+            const comparisonSlider = document.querySelector('.comparison-slider');
+            
+            if (!imageWrapper || !sliderHandle || !imageAfter) return;
+
+            let isDragging = false;
+            let startX = 0;
+            let startLeft = 0;
+
+            function updateSlider(position) {
+                const rect = imageWrapper.getBoundingClientRect();
+                const percentage = Math.max(0, Math.min(100, (position / rect.width) * 100));
+                
+                sliderHandle.style.left = percentage + '%';
+                comparisonSlider.style.left = percentage + '%';
+                imageAfter.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+            }
+
+            function handleStart(e) {
+                isDragging = true;
+                imageWrapper.style.cursor = 'grabbing';
+                
+                if (e.type === 'mousedown') {
+                    startX = e.clientX;
+                } else if (e.type === 'touchstart') {
+                    startX = e.touches[0].clientX;
+                }
+                
+                const rect = imageWrapper.getBoundingClientRect();
+                startLeft = (startX - rect.left) / rect.width * 100;
+                updateSlider(startX - rect.left);
+                
+                e.preventDefault();
+            }
+
+            function handleMove(e) {
+                if (!isDragging) return;
+                
+                let currentX;
+                if (e.type === 'mousemove') {
+                    currentX = e.clientX;
+                } else if (e.type === 'touchmove') {
+                    currentX = e.touches[0].clientX;
+                }
+                
+                const rect = imageWrapper.getBoundingClientRect();
+                updateSlider(currentX - rect.left);
+                
+                e.preventDefault();
+            }
+
+            function handleEnd() {
+                isDragging = false;
+                imageWrapper.style.cursor = 'grab';
+            }
+
+            // Mouse events
+            imageWrapper.addEventListener('mousedown', handleStart);
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('mouseup', handleEnd);
+
+            // Touch events
+            imageWrapper.addEventListener('touchstart', handleStart, { passive: false });
+            document.addEventListener('touchmove', handleMove, { passive: false });
+            document.addEventListener('touchend', handleEnd);
+
+            // Click to position
+            imageWrapper.addEventListener('click', (e) => {
+                if (isDragging) return;
+                const rect = imageWrapper.getBoundingClientRect();
+                updateSlider(e.clientX - rect.left);
+            });
+        }
+
+        // Initialize image comparison when page loads
+        document.addEventListener('DOMContentLoaded', initImageComparison);
+    </script>
+</body>
+</html>

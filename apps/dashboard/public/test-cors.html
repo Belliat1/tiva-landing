@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test CORS</title>
+</head>
+<body>
+    <h1>Test CORS</h1>
+    <button onclick="testCORS()">Probar CORS</button>
+    <div id="result"></div>
+
+    <script>
+        async function testCORS() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Probando CORS...';
+            
+            try {
+                const response = await fetch('http://localhost:3001/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        email: 'test@example.com',
+                        password: '123456',
+                        storeName: 'Test Store'
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `✅ CORS OK: ${response.status} - ${JSON.stringify(data)}`;
+            } catch (error) {
+                resultDiv.innerHTML = `❌ CORS Error: ${error.message}`;
+                console.error('CORS Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

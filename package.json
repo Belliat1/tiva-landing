@@ -1,0 +1,28 @@
+{
+  "name": "tiva-landing-page",
+  "version": "1.0.0",
+  "description": "Professional landing page for Tiva digital services",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "landing-page",
+    "digital-services",
+    "ai",
+    "web-development",
+    "chatbot",
+    "e-commerce"
+  ],
+  "author": "Tiva",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tiva-landing.git"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}
