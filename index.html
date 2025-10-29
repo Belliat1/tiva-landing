@@ -77,10 +77,15 @@
         }
 
         .text-logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--primary-blue);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--primary-blue), #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-menu {
@@ -1175,7 +1180,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="https://via.placeholder.com/200x60/1E3A8A/FFFFFF?text=TIVA" alt="Tiva Logo" loading="eager">
+                <img src="/img/Logotiva.png" alt="Tiva Logo" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-fallback" style="display: none; font-size: 24px; font-weight: 700; color: var(--primary-blue);">TIVA</div>
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
@@ -1244,29 +1250,29 @@
                     <p class="benefit-description">
                         Pay only for the service you need. No long-term commitments or hidden sales commissions.
                     </p>
-                                        </div>
+                                            </div>
                                         
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
                         <i class="fas fa-mobile-alt"></i>
-                                            </div>
+                                                </div>
                     <h3 class="benefit-title">WhatsApp, SMS and Telegram integrations</h3>
                     <p class="benefit-description">
                         Your customers can buy directly from their favorite messaging applications.
                     </p>
-                            </div>
-                            
+                                        </div>
+                                        
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
                             <i class="fas fa-brain"></i>
-                        </div>
+                                            </div>
                     <h3 class="benefit-title">AI that improves your products and sells for you</h3>
                     <p class="benefit-description">
                         Artificial intelligence optimizes your images, creates attractive descriptions and automates sales.
                     </p>
-                </div>
-            </div>
-        </div>
+                                            </div>
+                                        </div>
+                                    </div>
     </section>
 
     <!-- Services Section -->
@@ -1275,13 +1281,13 @@
             <div class="section-header">
                 <h2 class="section-title">What can we do for you?</h2>
                 <p class="section-subtitle">Complete digital services to modernize your business</p>
-            </div>
-            
+                            </div>
+                            
             <div class="services-grid">
                 <div class="service-card fade-in-up">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
-                        </div>
+                                </div>
                     <h3 class="service-title">Professional websites</h3>
                     <p class="service-description">
                         Modern, responsive and conversion-optimized websites. Professional design that builds trust with your customers.
@@ -1290,43 +1296,43 @@
                 
                 <div class="service-card fade-in-up">
                     <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        </div>
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
                     <h3 class="service-title">AI catalogs + shopping cart</h3>
                     <p class="service-description">
                         Smart catalogs with automated shopping cart. AI improves your products and facilitates sales.
                     </p>
-            </div>
-            
+                        </div>
+                        
                 <div class="service-card fade-in-up">
                     <div class="service-icon">
                         <i class="fas fa-robot"></i>
-                </div>
+                            </div>
                     <h3 class="service-title">Sales chatbots</h3>
                     <p class="service-description">
                         Virtual assistants that serve your customers 24/7, answer questions and process orders automatically.
                     </p>
-                    </div>
+                            </div>
                     
                 <div class="service-card fade-in-up">
                     <div class="service-icon">
                         <i class="fas fa-calendar-check"></i>
-                    </div>
+                        </div>
                     <h3 class="service-title">Reservation system</h3>
                     <p class="service-description">
                         Complete platform to manage appointments, reservations and services. Ideal for restaurants, salons and clinics.
                     </p>
-                    </div>
-                    
+                </div>
+                
                 <div class="service-card fade-in-up">
                     <div class="service-icon">
                         <i class="fas fa-qrcode"></i>
-                    </div>
+                        </div>
                     <h3 class="service-title">QR orders for restaurants</h3>
                     <p class="service-description">
                         Digital menu system with QR codes. Customers scan, view the menu and place orders from their phone.
                     </p>
-                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1345,13 +1351,13 @@
                     <div class="service-badge">Most Popular</div>
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
-                    </div>
+                        </div>
                     <h3 class="service-name">Website + Smart Catalog</h3>
                     <p class="service-description">Professional website with AI-powered product catalog and automated shopping cart</p>
                     <div class="pricing-info">
                         <div class="price-initial">$700 USD</div>
                         <div class="price-monthly">$15/month (optional)</div>
-                    </div>
+                        </div>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Professional responsive website</li>
                         <li><i class="fas fa-check"></i> AI-powered product catalog</li>
@@ -1359,7 +1365,7 @@
                         <li><i class="fas fa-check"></i> Image optimization with AI</li>
                         <li><i class="fas fa-check"></i> SEO optimization</li>
                     </ul>
-                </div>
+                        </div>
                 
                 <div class="service-pricing-card">
                     <div class="service-icon">
@@ -1370,7 +1376,7 @@
                     <div class="pricing-info">
                         <div class="price-initial">$250 USD</div>
                         <div class="price-monthly">$20/month (AI + support)</div>
-                    </div>
+                        </div>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> 24/7 automated responses</li>
                         <li><i class="fas fa-check"></i> WhatsApp integration</li>
@@ -1378,18 +1384,18 @@
                         <li><i class="fas fa-check"></i> Order processing</li>
                         <li><i class="fas fa-check"></i> Technical support</li>
                     </ul>
-                </div>
+                        </div>
                 
                 <div class="service-pricing-card">
                     <div class="service-icon">
                         <i class="fas fa-brain"></i>
-                    </div>
+                        </div>
                     <h3 class="service-name">Advanced AI Chatbot</h3>
                     <p class="service-description">Advanced chatbot powered by GPT with natural language processing</p>
                     <div class="pricing-info">
                         <div class="price-initial">$490 USD</div>
                         <div class="price-monthly">$40/month (GPT + support)</div>
-                    </div>
+                        </div>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> GPT-powered responses</li>
                         <li><i class="fas fa-check"></i> Natural language processing</li>
@@ -1397,18 +1403,18 @@
                         <li><i class="fas fa-check"></i> Advanced analytics</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
-                </div>
+                        </div>
                 
                 <div class="service-pricing-card">
                     <div class="service-icon">
                         <i class="fas fa-qrcode"></i>
-                    </div>
+                        </div>
                     <h3 class="service-name">QR Orders for Restaurants</h3>
                     <p class="service-description">Digital menu system with QR codes for contactless ordering</p>
                     <div class="pricing-info">
                         <div class="price-initial">$350 USD</div>
                         <div class="price-monthly">$15/month</div>
-                    </div>
+                        </div>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Digital menu with QR codes</li>
                         <li><i class="fas fa-check"></i> Contactless ordering</li>
@@ -1416,8 +1422,8 @@
                         <li><i class="fas fa-check"></i> Real-time menu updates</li>
                         <li><i class="fas fa-check"></i> Order management system</li>
                     </ul>
-                </div>
-            </div>
+                        </div>
+                        </div>
             
             <!-- Monthly Fee Explanation -->
             <div class="monthly-fee-clarification">
@@ -1426,8 +1432,8 @@
                 <div class="clarification-note">
                     <i class="fas fa-info-circle"></i>
                     <p><strong>The website service works without monthly fees</strong> if the client manages their content. If you prefer us to do it, it can be activated for $15/month.</p>
-                </div>
-            </div>
+                        </div>
+                        </div>
             
             <!-- CTA Section -->
             <div class="pricing-cta">
@@ -1438,8 +1444,8 @@
                 <a href="https://wa.me/573012533436?text=Hello, I want to speak with an advisor about Tiva's services" class="btn-secondary btn-large" target="_blank" rel="noopener">
                     <i class="fab fa-whatsapp"></i>
                     Speak with an advisor via WhatsApp
-                </a>
-            </div>
+                    </a>
+                </div>
         </div>
     </section>
 
@@ -1456,44 +1462,44 @@
                     <div class="cost-item">
                         <div class="cost-icon">
                             <i class="fas fa-server"></i>
-            </div>
+                        </div>
                         <div class="cost-content">
                             <h4>Hosting and system maintenance</h4>
                             <p>Keeping your service running 24/7 with optimal performance</p>
+                </div>
+            </div>
+            
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-brain"></i>
+                </div>
+                        <div class="cost-content">
+                            <h4>AI processing for images and texts</h4>
+                            <p>Automatic image enhancement and intelligent text generation</p>
                         </div>
                     </div>
                     
                     <div class="cost-item">
                         <div class="cost-icon">
-                            <i class="fas fa-brain"></i>
-                                        </div>
-                        <div class="cost-content">
-                            <h4>AI processing for images and texts</h4>
-                            <p>Automatic image enhancement and intelligent text generation</p>
-                                    </div>
-                            </div>
-                            
-                    <div class="cost-item">
-                        <div class="cost-icon">
                             <i class="fas fa-plug"></i>
-                                </div>
+                    </div>
                         <div class="cost-content">
                             <h4>External integrations</h4>
                             <p>Use of Make, n8n or AI APIs (like GPT) for automation</p>
-                                </div>
-                            </div>
-                            
+                    </div>
+                    </div>
+                    
                     <div class="cost-item">
                         <div class="cost-icon">
                             <i class="fas fa-tools"></i>
-                                </div>
+                    </div>
                         <div class="cost-content">
                             <h4>Updates and technical support</h4>
                             <p>Basic technical support and minor adjustments</p>
-                                </div>
-                            </div>
-                        </div>
-                        
+                    </div>
+                    </div>
+                    </div>
+                    
                 <div class="explanation-note">
                     <p>
                         <strong>No monthly fee is charged</strong> if the service doesn't require it (like the Web One Page), but you can request an optional maintenance plan if you want the Tiva team to manage constant changes or improvements for you.
@@ -1501,9 +1507,9 @@
                     <p>
                         This ensures your system always works without problems and you can focus on growing your business.
                     </p>
-                            </div>
-                                </div>
-                                </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- AI Image Enhancement Section -->
@@ -1519,8 +1525,8 @@
                     <div class="image-wrapper">
                         <img src="/img/imagen1.jpeg" alt="Original product image" class="image-before" loading="lazy">
                         <img src="/img/imagen2.png" alt="AI enhanced product image" class="image-after" loading="lazy">
-                        <div class="comparison-slider">
-                            <div class="slider-handle">
+                            <div class="comparison-slider">
+                                <div class="slider-handle">
                                 <div class="slider-line"></div>
                                 <div class="slider-button">
                                     <i class="fas fa-grip-vertical"></i>
@@ -1530,35 +1536,35 @@
                         <div class="image-labels">
                             <div class="label-before">Before</div>
                             <div class="label-after">After AI Enhancement</div>
-                        </div>
                     </div>
                 </div>
+            </div>
                 
                 <div class="enhancement-features">
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-magic"></i>
-                        </div>
+            </div>
                         <div class="feature-content">
                             <h4>Automatic Enhancement</h4>
                             <p>AI improves lighting, colors and overall quality</p>
-                        </div>
                     </div>
-                    
+                </div>
+                
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-palette"></i>
-                        </div>
+                    </div>
                         <div class="feature-content">
                             <h4>Color Optimization</h4>
                             <p>Perfect color balance and saturation adjustment</p>
-                        </div>
                     </div>
-                    
+                </div>
+                
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fas fa-search-plus"></i>
-                        </div>
+                    </div>
                         <div class="feature-content">
                             <h4>Detail Enhancement</h4>
                             <p>Sharpens details and improves texture clarity</p>
@@ -1575,7 +1581,7 @@
             <div class="section-header">
                 <h2 class="section-title">What our clients say</h2>
                 <p class="section-subtitle">Businesses that have grown with our services</p>
-                        </div>
+            </div>
                         
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in-up">
@@ -1587,40 +1593,40 @@
                         <div class="author-info">
                             <h4>Inglés Plus</h4>
                             <p>English Learning Platform</p>
+            </div>
                         </div>
-                    </div>
                     <div class="testimonial-website-preview">
                         <h4>See their platform in action:</h4>
-                        <div class="website-frame">
-                            <div class="frame-header">
-                                <div class="frame-controls">
-                                    <span class="control red"></span>
-                                    <span class="control yellow"></span>
-                                    <span class="control green"></span>
-                                </div>
-                                <div class="frame-url">
-                                    <i class="fas fa-lock"></i>
+                            <div class="website-frame">
+                                <div class="frame-header">
+                                    <div class="frame-controls">
+                                        <span class="control red"></span>
+                                        <span class="control yellow"></span>
+                                        <span class="control green"></span>
+                                    </div>
+                                    <div class="frame-url">
+                                        <i class="fas fa-lock"></i>
                                     inglesplus.com
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="frame-content">
-                                <iframe 
+                                <div class="frame-content">
+                                    <iframe 
                                     src="https://www.inglesplus.com/" 
-                                    frameborder="0"
-                                    allowfullscreen
-                                    loading="lazy"
+                                        frameborder="0"
+                                        allowfullscreen
+                                        loading="lazy"
                                     title="Inglés Plus - English Learning Platform">
-                                </iframe>
-                            </div>
-                            <div class="frame-footer">
+                                    </iframe>
+                                </div>
+                                <div class="frame-footer">
                                 <a href="https://www.inglesplus.com/" target="_blank" rel="noopener" class="btn-secondary btn-small">
-                                    <i class="fas fa-external-link-alt"></i>
+                                        <i class="fas fa-external-link-alt"></i>
                                     View full platform
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 
                 <div class="testimonial-card fade-in-up">
                     <div class="testimonial-quote">
@@ -1631,42 +1637,42 @@
                         <div class="author-info">
                             <h4>Ana María Gelatinas</h4>
                             <p>Artistic Gelatin Business</p>
+                </div>
                         </div>
-                    </div>
                     <div class="testimonial-website-preview">
                         <h4>See their store in action:</h4>
-                        <div class="website-frame">
-                            <div class="frame-header">
-                                <div class="frame-controls">
-                                    <span class="control red"></span>
-                                    <span class="control yellow"></span>
-                                    <span class="control green"></span>
-                                </div>
-                                <div class="frame-url">
-                                    <i class="fas fa-lock"></i>
+                            <div class="website-frame">
+                                <div class="frame-header">
+                                    <div class="frame-controls">
+                                        <span class="control red"></span>
+                                        <span class="control yellow"></span>
+                                        <span class="control green"></span>
+                                    </div>
+                                    <div class="frame-url">
+                                        <i class="fas fa-lock"></i>
                                     anamariagelatinas.vercel.app
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="frame-content">
-                                <iframe 
+                                <div class="frame-content">
+                                    <iframe 
                                     src="https://anamariagelatinas.vercel.app/" 
-                                    frameborder="0"
-                                    allowfullscreen
-                                    loading="lazy"
+                                        frameborder="0"
+                                        allowfullscreen
+                                        loading="lazy"
                                     title="Ana María Gelatinas - Artistic Gelatin Store">
-                                </iframe>
-                            </div>
-                            <div class="frame-footer">
+                                    </iframe>
+                                </div>
+                                <div class="frame-footer">
                                 <a href="https://anamariagelatinas.vercel.app/" target="_blank" rel="noopener" class="btn-secondary btn-small">
-                                    <i class="fas fa-external-link-alt"></i>
+                                        <i class="fas fa-external-link-alt"></i>
                                     View full store
-                                </a>
+                                    </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                        </div>
+        </div>
     </section>
 
     <!-- Final CTA Section -->
@@ -1694,7 +1700,8 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="https://via.placeholder.com/200x60/1E3A8A/FFFFFF?text=TIVA" alt="Tiva Logo" loading="eager">
+                        <img src="/img/Logotiva.png" alt="Tiva Logo" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="logo-fallback" style="display: none; font-size: 24px; font-weight: 700; color: var(--primary-blue); margin-bottom: 15px;">TIVA</div>
                     </div>
                     <p>Smart digital services to grow your business.</p>
                     </div>
