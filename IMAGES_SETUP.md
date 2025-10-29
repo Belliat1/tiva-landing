@@ -60,3 +60,4 @@ After uploading, test that the images load correctly:
 ---
 
 **Once images are uploaded correctly, your landing page will be fully functional! 🚀**
+

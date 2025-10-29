@@ -1173,6 +1173,36 @@
         .whatsapp-link:hover {
             background: #128C7E;
         }
+
+        /* Buy Button Styles */
+        .buy-button {
+            background: var(--accent-green);
+            color: var(--text-dark);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buy-button:hover {
+            background: #8BC34A;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .buy-button i {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -1365,6 +1395,10 @@
                         <li><i class="fas fa-check"></i> Image optimization with AI</li>
                         <li><i class="fas fa-check"></i> SEO optimization</li>
                     </ul>
+                    <button class="buy-button" onclick="buyService('Website + Smart Catalog', '$700 USD')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
                         </div>
                 
                 <div class="service-pricing-card">
@@ -1384,6 +1418,10 @@
                         <li><i class="fas fa-check"></i> Basic configuration</li>
                         <li><i class="fas fa-check"></i> Technical support</li>
                     </ul>
+                    <button class="buy-button" onclick="buyService('Starter Bot', '$200 USD')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
                         </div>
                 
                 <div class="service-pricing-card">
@@ -1403,6 +1441,10 @@
                         <li><i class="fas fa-check"></i> Up to 3 integrations (Make, n8n, Airtable)</li>
                         <li><i class="fas fa-check"></i> Intelligent responses</li>
                     </ul>
+                    <button class="buy-button" onclick="buyService('Growth Bot (AI)', '$450 USD')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
                         </div>
                 
                 <div class="service-pricing-card">
@@ -1422,6 +1464,10 @@
                         <li><i class="fas fa-check"></i> Optional dashboard</li>
                         <li><i class="fas fa-check"></i> Premium support</li>
                     </ul>
+                    <button class="buy-button" onclick="buyService('Full AI Bot', '$650–750 USD')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
                         </div>
                 
                 <div class="service-pricing-card">
@@ -1441,6 +1487,10 @@
                         <li><i class="fas fa-check"></i> Real-time menu updates</li>
                         <li><i class="fas fa-check"></i> Order management system</li>
                     </ul>
+                    <button class="buy-button" onclick="buyService('QR Orders for Restaurants', '$350 USD')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
                         </div>
                         </div>
             
@@ -1898,6 +1948,14 @@
 
         // Initialize image comparison when page loads
         document.addEventListener('DOMContentLoaded', initImageComparison);
+
+        // Buy Service Function - Opens WhatsApp with English message
+        function buyService(serviceName, price) {
+            const phoneNumber = '573012533436';
+            const message = `Hi! I'm interested in the ${serviceName} service (${price}). Could you please provide me with more information about this service and how to proceed with the purchase? Thank you!`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
     </script>
 </body>
 </html>
